@@ -1,0 +1,305 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Muli', sans-serif;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+
+.row {
+    width: 100%;
+    height: 100%;
+}
+
+.row.white {
+    background: #f4f4f4;
+}
+
+.row.narrow {
+    max-width: 35em;
+    margin: 0 auto;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.col-2 {
+    width: 49%;
+    display: inline-block;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.top .inner:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.top .inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background img {
+    height: 100%;
+    min-width: 100%;
+    vertical-align: top;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.page.top {
+    text-align: center;
+    font-size: 0;
+    overflow: hidden; 
+}
+
+.copy {
+    display: inline-block;
+    overflow: auto;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.page.top .copy h1 {
+    font-size: 8rem;
+    color: transparent;
+    padding: 0.2em;
+    margin: 0;
+    text-shadow: 0px 0px 6px #333, 0 0 0 #000;
+}
+
+article.paper {
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 24em;
+    height: auto;
+    padding: 1em;
+    background: #fff;
+    box-shadow: 0px 0px 15px #000;
+
+    cursor: pointer;
+
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+
+
+    background: url(../img/paper.jpg); 
+}
+
+
+article.paper#one {
+    left: 30%;
+    top: 73%;
+    transform:rotate(4deg);
+    -ms-transform:rotate(4deg); /* IE 9 */
+    -webkit-transform:rotate(4deg); /* Opera, Chrome, and Safari */
+}
+
+article.paper#two {
+    left: 35%;
+    top: 80%;
+    transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg); /* IE 9 */
+    -webkit-transform:rotate(-5deg); /* Opera, Chrome, and Safari */
+}
+
+article.paper p {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+    .page.top .copy h1 {
+        font-size: 4em;
+    }
+    article.paper {
+        font-size: .5rem;
+    }
+
+
+    article.paper#one {
+        top: 80%;
+        left: 43%;
+        transform:rotate(-29deg);
+        -ms-transform:rotate(-29deg); /* IE 9 */
+        -webkit-transform:rotate(29deg); /* Opera, Chrome, and Safari */
+    }
+
+    article.paper#two {
+        top: 85%;
+        left: 43%;
+        transform:rotate(-19deg);
+        -ms-transform:rotate(-19deg); /* IE 9 */
+        -webkit-transform:rotate(-19deg); /* Opera, Chrome, and Safari */
+    }
+
+}
+
+.page.blog {
+    height: auto;
+    z-index: 2;
+}
+
+.page.blog .inner {
+    width: 100%;
+    text-align: center;
+}
+
+.page.blog .inner:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.page.blog .copy {
+    max-width: 80%;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.page.blog .post {
+    display:inline-block; 
+    max-width: 35em;
+}
+
+.page.blog .post p {
+    text-align: left;
+    font-size: 1.5em;
+}
+
+.page.blog .h3 {
+    position: relative;
+    border-top: 1px solid #000;
+}
+
+.page.blog .h3 .span {
+    position: relative;
+    top: -0.8em;
+    padding: 0 1em 0 1em;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    background: #f4f4f4;
+}
+
+.page.blog h1 {
+    margin-bottom: 0px;
+    font-size: 6em;
+}
+
+.stamp {
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    width: 10em;
+    transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg); /* IE 9 */
+    -webkit-transform:rotate(-5deg); /* Opera, Chrome, and Safari */
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.stamp img{
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .page.blog .copy{
+        font-size: 0.6em;
+    }
+
+    .page.blog h1 {
+        font-size: 4em;
+    }
+
+    .stamp img{
+        width: 8em;
+    }
+}
+
+.scrollDown {
+    position: relative;
+    height: 4.8em;
+    color: #999;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.header-scrollDown {
+    margin: 0;
+    padding: .5em 0;
+    font-size: 32px;
+}
+
+.blog-navigator {
+    padding-bottom: 1.75em;
+}
+
+.button-text {
+    display: inline-block;
+    padding: .25em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: 0.18s;
+    transition: 0.18s;
+}
+.button-text:hover {
+    background: #333;
+    color: #fff;
+}
+.button-text.disabled {
+    opacity: 0.3;
+}
+.button-text.disabled:hover{
+    background: #fff;
+    color: #333;
+    cursor: default;
+}
+
+#disqus_thread {
+    border-top: 2px solid rgba(0,39,59,.08);
+}
