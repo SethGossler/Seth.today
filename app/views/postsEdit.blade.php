@@ -22,12 +22,25 @@
     </head>
     <body>
     	<div class="row narrow">
-			@foreach ($posts as $post)
-				<div> 
-                    {{$post->title}} : 
-                    <a href="{{ action("PostsController@edit", $post->id) }}">edit</a>
-                </div>
-			@endforeach
+			{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+				{{ Form::label('title', 'Title') }}
+				{{ Form::text('title') }}
+
+				{{ Form::label('subTitle', 'Sub Title') }}
+				{{ Form::text('subtitle') }}
+
+				{{ Form::label('copy', 'Content') }}
+				{{ Form::textarea('copy') }}
+
+				{{ Form::submit('Click Me!') }}
+
+			{{ Form::close() }}
+
+			{{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => "DELETE")) }}
+				{{ Form::hidden('_method', 'DELETE') }}
+				{{ Form::submit('Delete Post') }}
+			{{ Form::close() }}
+
     	</div>
     </body>
 </html>

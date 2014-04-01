@@ -2,6 +2,14 @@
 
 class PostsController extends \BaseController {
 
+
+	function __construct()
+	{
+        $this->beforeFilter('auth', array('except' => 'show'), function(){
+        	echo "GET OUT!";
+        });
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -62,7 +70,8 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		echo "hi";
+		$post = Post::find($id);
+		return View::make('postsEdit')->with('post', $post);
 	}
 
 	/**
@@ -73,7 +82,14 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		
+		$post = Post::find($id);
+		$post->title = Input::get('title');
+		$post->subtitle = Input::get('subtitle');
+		$post->copy = Input::get('copy');
+		$post->save();
+
+		return Redirect::to('posts');
+
 	}
 
 	/**
@@ -84,7 +100,9 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$post = Post::find($id);
+		$post->delete();
+		return Redirect::to('posts');
 	}
 
 }

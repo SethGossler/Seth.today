@@ -22,12 +22,16 @@
     </head>
     <body>
     	<div class="row narrow">
-			@foreach ($posts as $post)
-				<div> 
-                    {{$post->title}} : 
-                    <a href="{{ action("PostsController@edit", $post->id) }}">edit</a>
-                </div>
-			@endforeach
+			{{ Form::open(array('action' => 'UserController@login', 'method' => 'POST')) }}
+				{{ Form::label('email', 'User Email') }}
+				{{ Form::text('email') }}
+
+				{{ Form::label('password', 'Password') }}
+				{{ Form::text('password') }}
+
+                {{ Form::submit('Click Me!') }}
+
+			{{ Form::close() }}
     	</div>
     </body>
 </html>

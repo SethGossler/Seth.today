@@ -19,5 +19,6 @@ Route::get('/', function()
 		->with("post", $posts->last());
 });
 
-Route::resource('posts', 'PostsController');
-
+Route::resource('posts', 'PostsController', array('before'=>'auth.basic'));
+Route::resource('login', 'UserController');
+Route::post('user/login', 'UserController@login');
