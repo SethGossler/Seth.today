@@ -15,10 +15,15 @@ Route::get('/', function()
 {
 	$posts = Post::all();
 
+	$thisPost = $posts->last();
+	$prevPost = Post::find($thisPost->id-1);
+	$nextPost = Post::find($thisPost->id+1);
+
 	return View::make('hello')
-		->with("post", $posts->last());
+		->with(array("post"=>$thisPost, "prevPost"=>$prevPost, "nextPost"=>$nextPost));
 });
 
 Route::resource('posts', 'PostsController', array('before'=>'auth.basic'));
 Route::resource('login', 'UserController');
+
 Route::post('user/login', 'UserController@login');

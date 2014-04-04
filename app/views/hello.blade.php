@@ -12,13 +12,13 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="icon" type="image/png" href="icons/two.png">
+        <link rel="icon" type="image/png" href="/icons/two.png">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
 
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -31,7 +31,7 @@
                 <div class="page top">
                     <div class="inner">
                         <div class="background">
-                            <img src="img/bg.jpg">
+                            <img src="/img/bg.jpg">
                         </div>    
                         <div class="copy">
                             <h1>Seth Gossler</h1>
@@ -71,8 +71,28 @@
 
                     <div class="row white blog-navigator">
                         <div class="row narrow">
-                            <div class="col-2 left"><div class="button-text disabled left">Previous</div></div>
-                            <div class="col-2 right"><div class="button-text disabled right">Next</div></div>
+                            <div class="col-2 left">
+
+                                @if($prevPost)
+                                <a href="{{ action("PostsController@show", $prevPost->id) }}">
+                                    <div class="button-text left">Previous</div>
+                                </a>
+                                @else
+                                    <div class="button-text disabled left">Previous</div>
+                                @endif
+
+                            </div>
+                            <div class="col-2 right">
+
+                                @if($nextPost)
+                                <a href="{{ action("PostsController@show", $nextPost->id) }}">
+                                    <div class="button-text left">Next</div>
+                                </a>
+                                @else
+                                    <div class="button-text disabled left">Next</div>
+                                @endif
+
+                            </div>
                         </div>
                     </div>
 
@@ -81,7 +101,8 @@
                         <script type="text/javascript">
                             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
                             var disqus_shortname = 'sethtoday'; // required: replace example with your forum shortname
-
+                            var disqus_identifier = "post-{{ $post->id }}";
+                            var disqus_title = "{{ $post->title }}";
                             /* * * DON'T EDIT BELOW THIS LINE * * */
                             (function() {
                                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -100,10 +121,10 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
+        <script src="/js/plugins.js"></script>
         <script src="//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>       
-        <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="/js/main.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

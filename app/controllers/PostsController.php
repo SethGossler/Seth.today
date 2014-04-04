@@ -59,7 +59,15 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+
+		$prevPost = Post::find($id-1);
+		$thisPost = Post::find($id);
+		$nextPost = Post::find($id+1);
+
+
+		return View::make('hello')
+			->with(array("post"=>$thisPost, "prevPost"=>$prevPost, "nextPost"=>$nextPost));
+
 	}
 
 	/**
