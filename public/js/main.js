@@ -2,7 +2,7 @@ app = {
 
   init: function(){
     this.paperEffects();
-    this.slideScroll();
+    //this.slideScroll();
     this.hideScrollRow();
   },
 
