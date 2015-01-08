@@ -124,6 +124,13 @@
         <script src="/js/plugins.js"></script>
         <script src="//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>       
         <script src="/js/vendor/jquery.ui.touch-punch.min.js"></script>
+
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenLite.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/utils/Draggable.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/plugins/CSSPlugin.min.js"></script>
+
+
         <script src="/js/main.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

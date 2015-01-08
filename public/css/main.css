@@ -125,7 +125,7 @@ article.paper {
     -o-user-select: none;
     user-select: none;
 
-
+    -webkit-transform: translateZ(0);
     background: url(../img/paper.jpg); 
 }
 
