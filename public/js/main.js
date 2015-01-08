@@ -30,14 +30,21 @@ app = {
     // });  
 
     /* GSAP implementation of drag -- does matrix transforms instead of top|left */
-    Draggable.create($paper, {type:"x,y", edgeResistance:0.65, bounds:"", throwProps:true, onDrag:function(evt){
-      var $that = $(this.target);
-      var width = $(window).width();
-      var xPos = evt.x || evt.changedTouches[0].clientX;
-      var delta = (width/2-(xPos + $that.width()/2)) / (width*2/$that.width())
-      var newTransform = $that.css("transform") + " rotate("+delta+"deg)";
-      $that.css("transform", newTransform);
-    }});
+
+    $paper.each(function(){
+
+      Draggable.create(this, {type:"x,y", zIndexBoost:false, edgeResistance:0.65, bounds:"", throwProps:true, onDrag:function(evt){
+        var $that = $(this.target);
+        var width = $(window).width();
+        var xPos = evt.x || evt.changedTouches[0].clientX;
+        var delta = (width/2-(xPos + $that.width()/2)) / (width*2/$that.width())
+        var newTransform = $that.css("transform") + " rotate("+delta+"deg)";
+        $that.css("transform", newTransform);
+      }});
+
+    });
+
+
 
   },
 
