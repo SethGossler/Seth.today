@@ -15,7 +15,7 @@ Route::get('/', function()
 {
 	$posts = Post::all();
 
-	$thisPost = $posts->last();
+	$thisPost = $posts->first();
 	$prevPost = Post::find($thisPost->id-1);
 	$nextPost = Post::find($thisPost->id+1);
 
