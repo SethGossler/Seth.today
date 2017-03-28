@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	$posts = Post::all();
+	$posts = Post::orderBy('created_at', 'desc')->get();
 
 	$thisPost = $posts->first();
 	$prevPost = Post::find($thisPost->id-1);

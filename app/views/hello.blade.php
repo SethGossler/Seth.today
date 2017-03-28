@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <title>Seth Today - Today!</title>
-        <meta name="description" content="Keep up with Seth Gossler and his semi-daily take on the world of web development, and general life.">
+        <meta name="description" content="Keep up with Seth Gossler and his semi-yearly take on the world of web development, and general life.">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,6 +18,15 @@
         <link rel="stylesheet" href="/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
 
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@sethgossler" />
+	<meta name="twitter:creator" content="@sethgossler" />
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="{{ $post->title }}" />
+	<meta property="og:description" content="{{ $post->subtitle }}" />
+	<meta property="og:image" content="http://seth.today/icons/two.png" />
+	<meta property="og:image:width" content="100" />
+	<meta property="og:image:height" content="100" />
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -45,10 +54,21 @@
                         </article>
 
                         <article id="two" class="paper">
-                            <h1>Who Ate the Pie?<h1>
+                            <h1>Shopping List<h1>
                             <p>
-                                The wind blew, the sun shined, and the day was warm. Mid summer, mid afternoon, the perfect time for a pie. James knew he had a pie waiting for him in the kitchen. Having spent the last of his allowance on chocolate cream, he felt the dessert has tempted him long enough. 
-                            </p>
+                                1. Milk
+				</p>
+				<p>
+					2. Eggs
+				</p>
+				<p>
+
+					3. Snickers Bar
+				</p><p>
+				4. Bread</p><p>
+				5. Fish </p><p>
+				6. Cat Food</p>
+  
                         </article>
                     </div> 
                 </div>
